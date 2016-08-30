@@ -1,8 +1,16 @@
 <div class="student">
   <div class="container">
-    <h2><%= @student.name %></h2>
-	<h2><%= @student.school %></h2>
-
+	<h2><%= @student.name %></h2>
+	<body>
+		<tr>
+		<td><%= @student.school %></td>
+		<td><%= @student.year %></td>
+		<td><%= @student.age %></td>
+		<td><%= @student.contact %></td>
+		<td><%= link_to "Edit", edit_student_path(@student.id) %></td>
+		</tr>
+		
+	</thead>
     <div class="cards row">
       <% @comments.each do |d| %>
       <div class="card col-xs-4">

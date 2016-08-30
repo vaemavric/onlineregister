@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 	get 'students/' => 'students#index'
 	get 'students/:id'=> 'students#show', as: :student
 	post 'comments/' => 'comments#create'
-	delete 'comment/:id' => 'students#destroy'#
+	delete 'comment/:id' => 'students#destroy'
+	get 'students/edit' => 'students#edit'
 	
 	resources :students do  
 		resources :comments
