@@ -1,0 +1,35 @@
+<div class="student">
+  <div class="container">
+    <h2><%= @student.name %></h2>
+	<h2><%= @student.school %></h2>
+
+    <div class="cards row">
+      <% @comments.each do |d| %>
+      <div class="card col-xs-4">
+        <h2><%= d.created_at%></h2>
+        <p><%= d.content %></p>
+		<p><%= d.id %></p>
+		<li><%= link_to "Delete", student_path(d.id), method: "delete" %> </li>
+      </div>
+      <% end %>
+    </div>
+	
+  </div>
+</div>
+
+<div class="login">
+
+  <div class="container">
+    <div class="form">
+
+    <h1>add comment</h1>
+
+    <%= form_for [@student, @comments.new] do |f| %>
+		<%= f.text_area :content, :placeholder => "Comment", :required => 'required' %>
+		<%= f.submit "add comment", class: "btn-submit" %>
+	<%end%>
+
+  
+    </div>
+  </div>
+</div>

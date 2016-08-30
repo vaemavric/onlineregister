@@ -1,0 +1,19 @@
+
+<div class="login">
+
+  <div class="container">
+    <div class="form">
+
+    <h1>add comment</h1>
+
+    <%= form_for(@comment) do |f| %>
+      <%= f.text_area :content, :placeholder => "First name" %>
+      <%= f.text_field :name, :placeholder => "Last name" %>
+      <%= f.text_field :student_id, :placeholder => "Email" %>
+      <%= f.submit "add comment", class: "btn-submit" %>
+    <% end %>
+
+  
+    </div>
+  </div>
+</div>
